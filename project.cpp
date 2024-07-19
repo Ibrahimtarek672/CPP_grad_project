@@ -9,7 +9,7 @@ class custom {
 public:
     custom(std::vector<T> arr) : storage{arr} {}
     
-    auto get_custiomized_sub(std::vector<T> array)
+    auto get_sub(std::vector<T> array)
     {
         auto sub =0;
         int size = sizeof(array) / sizeof(array[0]);
@@ -22,9 +22,6 @@ public:
     }
 };
 
-
-namespace lib
-{
     template < typename T, typename U, typename ... Ts >
     auto get_max(const T x,const U y,const Ts ... values)
     {
@@ -96,8 +93,7 @@ namespace lib
             return x-y;
         }
     }
-    
-};
+
 
 int main() {
     
@@ -106,13 +102,13 @@ int main() {
     
     custom cust_data_type(buffer);
     
-    std::cout <<"the min number = "<< lib::get_min(5,34,24,323,321,111) << std::endl;
+    std::cout <<"the min number = "<< get_min(5,34,24,323,321,111) << std::endl;
     
-    std::cout <<"the max number = " << lib::get_max(55,34,24,323,321,111) <<std::endl;
+    std::cout <<"the max number = " << get_max(55,34,24,323,321,111) <<std::endl;
     
-    std::cout <<"the sub number = " << lib::get_sub(55,34,24,323,321,111) << std::endl;
+    std::cout <<"the sub number = " << get_sub(55,34,24,323,321,111) << std::endl;
     
-    int total_sub = cust_data_type.get_custiomized_sub(buffer);
+    int total_sub = cust_data_type.get_sub(buffer);
     std::cout <<"the sub number = " << total_sub;
     
     return 0;
